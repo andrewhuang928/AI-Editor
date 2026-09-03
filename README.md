@@ -109,29 +109,6 @@
 
 ```
 
-## 目前確定可行、已驗證的技術路徑
-
-| 環節 | 採用方案與備註 |
-| --- | --- |
-| **轉錄** | **WhisperX + hotwords**<br>
-
-<br>（非 `initial_prompt`，避免幻覺回吐） |
-| **繁體修正** | **opencc s2tw**<br>
-
-<br>（非 s2twp，避免改變用詞） |
-| **Resolve 時間軸建構** | **OTIO + LinearTimeWarp**<br>
-
-<br>（放棄 `create_timeline_from_clips`，因該方法有 1-frame 間隙缺陷且無法變速） |
-| **字幕匯入** | **SRT, Insert Selected Subtitles to → Timeline Using Timecode**<br>
-
-<br>（目前唯一無副作用的方式；其他如直接匯入 Timeline 或拖曳皆有缺陷） |
-| **雙 fps 換算** | 素材 60fps / 時間軸 30fps / 1.4倍速 → 除數為 2.8<br>
-
-<br>（已使用 golden sample 62 段進行驗證） |
-| **免費版 Resolve 自動化** | **in-app bridge**<br>
-
-<br>（結構性限制：每次重開 Resolve 都必須重新啟動 bridge） |
-
 ## 目前進度追蹤 (Progress Tracking)
 
 ### ✅ 已完成並驗證 (Done)
